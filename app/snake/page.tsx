@@ -1,8 +1,8 @@
 export default function SnakeGame() {
   return (
     <main style={{ textAlign: 'center', padding: '2rem' }}>
-      <h1>🐍 Bienvenue dans le jeu Snake !</h1>
-      <p>Le jeu arrive bientôt...</p>
+      <h1>🐍 Le jeu Snake est prêt !</h1>
+      <p>Appuie sur “Espace” pour commencer.</p>
     </main>
   );
 }
