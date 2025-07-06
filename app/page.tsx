@@ -2,6 +2,14 @@
 
 import { useState, useEffect, useRef } from 'react';
 
+const emptyBoxStyle = {
+  background: '#eee',
+  color: '#999',
+  padding: '2rem',
+  textAlign: 'center',
+  borderRadius: '8px',
+};
+
 export default function Home() {
   const [view, setView] = useState<'menu' | 'snake'>('menu');
 
@@ -59,14 +67,6 @@ export default function Home() {
     </main>
   );
 }
-
-const emptyBoxStyle = {
-  background: '#eee',
-  color: '#999',
-  padding: '2rem',
-  textAlign: 'center',
-  borderRadius: '8px',
-};
 
 function SnakeGame() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
