@@ -24,7 +24,7 @@ export default function Home() {
                 background: '#222',
                 color: '#fff',
                 padding: '2rem',
-                textAlign: 'center',
+                textAlign: 'center' as const,
                 cursor: 'pointer',
                 borderRadius: '8px',
               }}
@@ -59,7 +59,7 @@ export default function Home() {
   );
 }
 
-const emptyBoxStyle = {
+const emptyBoxStyle: React.CSSProperties = {
   background: '#eee',
   color: '#999',
   padding: '2rem',
