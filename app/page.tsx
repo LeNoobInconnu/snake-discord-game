@@ -3,31 +3,67 @@
 import { useState } from 'react';
 
 export default function Home() {
-  const [showGame, setShowGame] = useState(false);
+  const [view, setView] = useState<'menu' | 'snake'>('menu');
 
   return (
-    <main style={{ textAlign: 'center', padding: '2rem' }}>
-      {!showGame ? (
+    <main style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
+      {view === 'menu' ? (
         <>
-          <h1>🎮 Menu Principal</h1>
-          <button
-            onClick={() => setShowGame(true)}
+          <h1 style={{ textAlign: 'center' }}>🎮 Menu des jeux</h1>
+          <div
             style={{
-              padding: '1rem 2rem',
-              fontSize: '1.2rem',
-              marginTop: '2rem',
-              cursor: 'pointer',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '1rem',
+              maxWidth: '600px',
+              margin: '2rem auto',
             }}
           >
-            Jouer au Snake 🐍
-          </button>
+            <div
+              onClick={() => setView('snake')}
+              style={{
+                background: '#222',
+                color: '#fff',
+                padding: '2rem',
+                textAlign: 'center',
+                cursor: 'pointer',
+                borderRadius: '8px',
+              }}
+            >
+              🐍 Snake
+            </div>
+            <div style={emptyBoxStyle}>À venir</div>
+            <div style={emptyBoxStyle}>À venir</div>
+            <div style={emptyBoxStyle}>À venir</div>
+          </div>
         </>
       ) : (
         <>
-          <h1>🐍 Le jeu Snake est prêt !</h1>
-          <p>Appuie sur “Espace” pour commencer.</p>
+          <h1 style={{ textAlign: 'center' }}>🐍 Le jeu Snake</h1>
+          <p style={{ textAlign: 'center' }}>Le jeu arrive bientôt...</p>
+          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+            <button
+              onClick={() => setView('menu')}
+              style={{
+                padding: '0.8rem 1.5rem',
+                fontSize: '1rem',
+                cursor: 'pointer',
+                borderRadius: '6px',
+              }}
+            >
+              🔙 Retour au menu
+            </button>
+          </div>
         </>
       )}
     </main>
   );
 }
+
+const emptyBoxStyle = {
+  background: '#eee',
+  color: '#999',
+  padding: '2rem',
+  textAlign: 'center',
+  borderRadius: '8px',
+};
