@@ -1,14 +1,5 @@
 'use client';
-
 import { useState, useEffect, useRef } from 'react';
-
-const emptyBoxStyle = {
-  background: '#eee',
-  color: '#999',
-  padding: '2rem',
-  textAlign: 'center',
-  borderRadius: '8px',
-};
 
 export default function Home() {
   const [view, setView] = useState<'menu' | 'snake'>('menu');
@@ -68,6 +59,14 @@ export default function Home() {
   );
 }
 
+const emptyBoxStyle = {
+  background: '#eee',
+  color: '#999',
+  padding: '2rem',
+  textAlign: 'center',
+  borderRadius: '8px',
+};
+
 function SnakeGame() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [snake, setSnake] = useState([{ x: 10, y: 10 }]);
@@ -103,7 +102,6 @@ function SnakeGame() {
 
   useEffect(() => {
     if (!running) return;
-
     const interval = setInterval(() => {
       setSnake((prev) => {
         const head = { ...prev[0] };
@@ -130,10 +128,10 @@ function SnakeGame() {
         } else {
           newSnake.pop();
         }
+
         return newSnake;
       });
     }, 150);
-
     return () => clearInterval(interval);
   }, [dir, food, running]);
 
@@ -161,7 +159,7 @@ function SnakeGame() {
         ref={canvasRef}
         width={gridSize * 20}
         height={gridSize * 20}
-        style={{ border: '2px solid #333' }}
+        style={{ border: '2px solid #333', backgroundColor: '#111' }}
       />
       {!running && <p style={{ color: 'red' }}>💀 Game Over</p>}
     </div>
