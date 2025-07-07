@@ -15,28 +15,28 @@ export default function Home() {
         }}
       >
         <a
-          href="https://snake-discord-game-17v4.vercel.app"
+          href="https://openfront.io/"
           target="_blank"
           rel="noopener noreferrer"
           style={buttonStyle}
         >
-          🐍 Snake
+          🌍 OpenFront
         </a>
         <a
-          href="https://example.com/memory"
+          href="https://makeitmeme.com/fr/play"
           target="_blank"
           rel="noopener noreferrer"
           style={buttonStyle}
         >
-          🧠 Memory
+          🎬 Make it Meme
         </a>
         <a
-          href="https://example.com/puzzle"
+          href="https://garticphone.com/fr"
           target="_blank"
           rel="noopener noreferrer"
           style={buttonStyle}
         >
-          🧩 Puzzle
+          🧩 Gartic Phone
         </a>
         <a
           href="https://example.com/space"
@@ -44,7 +44,7 @@ export default function Home() {
           rel="noopener noreferrer"
           style={buttonStyle}
         >
-          🚀 Space Game
+          🚀 Indisponible
         </a>
       </div>
     </main>
