@@ -7,11 +7,12 @@ export default function Home() {
       <h1 style={{ textAlign: 'center' }}>🎮 Menu des jeux</h1>
       <div
         style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(2, 1fr)',
+          display: 'flex',
+          justifyContent: 'center',
           gap: '1rem',
-          maxWidth: '600px',
+          maxWidth: '1000px',
           margin: '2rem auto',
+          flexWrap: 'wrap',
         }}
       >
         <a
@@ -38,14 +39,6 @@ export default function Home() {
         >
           🧩 Gartic Phone
         </a>
-        <a
-          href="https://example.com/space"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={buttonStyle}
-        >
-          🚀 Indisponible
-        </a>
       </div>
     </main>
   );
@@ -60,4 +53,5 @@ const buttonStyle: React.CSSProperties = {
   borderRadius: '8px',
   textDecoration: 'none',
   fontSize: '1.2rem',
+  minWidth: '180px',
 };
